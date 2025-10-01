@@ -1,0 +1,67 @@
+Esquema de Tabelas:
+
+Pessoa:
+- id (INT, PK, NOT NULL)
+- nome (NOT NULL)
+- dataNascimento (NOT NULL)
+- dataFalecimento 
+- contacto 
+- email 
+
+Autor:
+- id (INT, PK, NOT NULL) 
+- pessoa_id REF Pessoa.id (NOT NULL)
+
+Tradutor:
+- id (INT, PK, NOT NULL)
+- pessoa_id REF Pessoa.id (NOT NULL)
+
+Pais:
+- id (INT, PK, NOT NULL)
+- nome (NOT NULL)
+
+Livro:
+- id (INT, PK, NOT NULL)
+- titulo (NOT NULL)
+- ano 
+- lingua (NOT NULL)
+- autor_id REF Autor.id (NOT NULL)
+
+Traducao:
+- id (INT, PK, NOT NULL)
+- titulo (NOT NULL)
+- ano 
+- lingua (NOT NULL)
+- custo (NOT NULL)
+
+Edicao:
+- id (INT, PK, NOT NULL)
+- isbn (UNIQUE, NOT NULL)
+- num (NOT NULL)
+- valorVendas 
+- custoProducao (NOT NULL)
+- livro_id REF Livro.id (NOT NULL)
+- traducao_id REF Traducao.id (NOT NULL)
+
+Tabelas Relações:
+
+ListaPodePublicar:
+- edicao_id, pais_id (INT, PK, NOT NULL)
+- edicao_id REF Edicao.id (NOT NULL)
+- pais_id REF Pais.id (NOT NULL)
+- custoDireitoPublicacao (NOT NULL)
+
+ListaPodeVender:
+- edicao_id, pais_id (INT, PK, NOT NULL)
+- edicao_id REF Edicao.id (NOT NULL)
+- pais_id REF Pais.id (NOT NULL)
+
+TradutorTraducao:
+- id (INT, PK, NOT NULL)
+- tradutor_id REF Tradutor.id (NOT NULL)
+- traducao_id REF Traducao.id (NOT NULL)
+
+EdicaoPublicacao:
+- id (INT, PK, NOT NULL)
+- edicao_id REF Edicao.id (NOT NULL)
+- pais_id REF Pais.id (NOT NULL)
