@@ -2,6 +2,3 @@
 *.sql linguist-detectable=true
 *.sql linguist-language=SQL
 
-# Forçar ficheiros draw.io a contar como UML
-*.drawio linguist-detectable=true
-*.drawio linguist-language=UML
