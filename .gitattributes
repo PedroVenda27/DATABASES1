@@ -1,13 +1,3 @@
-# Forçar ficheiros HTML a contar como HTML
-*.html linguist-language=HTML
-
-# Forçar ficheiros CSS a contar como CSS
-*.css linguist-language=CSS
-
-# Forçar ficheiros JavaScript a contar como JavaScript
-*.js linguist-language=JavaScript
-
-# Para todos os outros arquivos (HTML, CSS, JS, etc.) também ser detectados
-*.html linguist-detectable=true
-*.css linguist-detectable=true
-*.js linguist-detectable=true
+# Forçar ficheiros SQL a contar como SQL
+*.sql linguist-detectable=true
+*.sql linguist-language=SQL
